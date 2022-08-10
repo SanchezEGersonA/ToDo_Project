@@ -31,10 +31,6 @@ module.exports = {
                 use: [MiniCssExtract.loader, 'css-loader']
             },
             {
-                test: /\.(png|jpe?g|gif)$/,
-                loader: 'file-loader'
-            },
-            {
                 test: /\.m?js$/,
                 exclude: /node_modules/,
                 use: {
@@ -64,11 +60,5 @@ module.exports = {
             filename: '[name].[fullhash].css',
             ignoreOrder: false
         }),
-
-        new CopyPlugin({
-            patterns: [
-                { from: 'src/assets', to: 'assets/' }
-            ]
-        })
     ]
 }
